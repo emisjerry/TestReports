@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="COVID-1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a78c08ff-857f-4f20-86e5-30fb8a6dc8b9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="COVID19-Data"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="country_ch" class="java.lang.String"/>
+	<field name="country_en" class="java.lang.String"/>
+	<field name="cases" class="java.lang.String"/>
+	<field name="deaths" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="80" height="79" uuid="020f7e1e-2acd-4889-aca8-92fdb2663840"/>
+				<imageExpression><![CDATA["Z:/test/data/COVID-19.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="90" y="10" width="430" height="30" uuid="14c27914-496a-4a61-8b19-77652933b319"/>
+				<textElement>
+					<font fontName="標楷體" size="20"/>
+				</textElement>
+				<text><![CDATA[COVID-19各國家地區累積病例數與死亡數統計表]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="212" y="46" width="100" height="30" uuid="4b1136cb-a58a-468b-947e-a0240f1a7c3c"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="30" uuid="4a38f2a9-62f6-4db2-bc1c-29fe1744d295"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="標楷體" size="14"/>
+				</textElement>
+				<text><![CDATA[國名（英文)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="140" height="30" uuid="c179e961-dee3-404d-8cf0-915344e2bbf8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="標楷體" size="14"/>
+				</textElement>
+				<text><![CDATA[國名（中文)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="120" height="30" uuid="5b68e6ae-4a16-4d2a-979c-d2f55ee598de"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="標楷體" size="14"/>
+				</textElement>
+				<text><![CDATA[案例數]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="130" height="30" uuid="8f50b3de-47ac-4a2a-8da1-4bfd7d8eb82f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="標楷體" size="14"/>
+				</textElement>
+				<text><![CDATA[死亡數]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

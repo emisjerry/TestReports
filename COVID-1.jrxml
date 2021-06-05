@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.15.0.final using JasperReports Library version 6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="COVID-1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a78c08ff-857f-4f20-86e5-30fb8a6dc8b9">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="COVID19-1" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="40" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fbf5ef0d-c22b-43cb-84cd-e83f1512bf48">
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="458"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="528"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="COVID19-Data"/>
-	<queryString>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="csv">
 		<![CDATA[]]>
 	</queryString>
 	<field name="country_ch" class="java.lang.String"/>
@@ -13,55 +24,101 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="78" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="0" width="80" height="79" uuid="020f7e1e-2acd-4889-aca8-92fdb2663840"/>
+				<reportElement x="0" y="0" width="150" height="59" uuid="25838ad5-a114-4574-bc94-78198779eb70"/>
 				<imageExpression><![CDATA["Z:/test/data/COVID-19.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="90" y="10" width="430" height="30" uuid="14c27914-496a-4a61-8b19-77652933b319"/>
-				<textElement>
+				<reportElement x="120" y="0" width="270" height="50" uuid="767d423f-f0ca-4661-b828-82a4fb10558e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="標楷體" size="20"/>
 				</textElement>
-				<text><![CDATA[COVID-19各國家地區累積病例數與死亡數統計表]]></text>
+				<text><![CDATA[戴口罩，勤洗手★遠離病毒]]></text>
 			</staticText>
-			<textField pattern="yyyy-MM-dd">
-				<reportElement x="212" y="46" width="100" height="30" uuid="4b1136cb-a58a-468b-947e-a0240f1a7c3c"/>
-				<textElement>
-					<font fontName="Arial" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="82" y="10" width="390" height="30" uuid="7f4b9819-c147-4181-a760-40dd862a2ff6"/>
+				<textElement>
+					<font fontName="標楷體" size="18"/>
+				</textElement>
+				<text><![CDATA[COVID-19各國家地區累積病例數與死亡數 統計表]]></text>
+			</staticText>
+			<textField pattern="日期：yyyy-MM-dd">
+				<reportElement x="0" y="42" width="130" height="20" uuid="a41c7abf-4b5b-4ae0-ade2-c0b67f690416">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="細明體" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="42" width="50" height="20" uuid="67195340-b34d-4578-869e-2ea432b2ef1f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 頁"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="455" y="42" width="50" height="20" uuid="d9b29889-f6c6-4600-a9ef-157f696bdddd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["/共 " + $V{PAGE_NUMBER} + " 頁"]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="30" splitType="Stretch">
+		<band height="26">
 			<staticText>
-				<reportElement x="0" y="0" width="150" height="30" uuid="4a38f2a9-62f6-4db2-bc1c-29fe1744d295"/>
+				<reportElement mode="Opaque" x="0" y="0" width="140" height="26" backcolor="#00FFCC" uuid="14110dea-ae7c-4899-b214-f41dd5fbf41e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="標楷體" size="14"/>
 				</textElement>
-				<text><![CDATA[國名（英文)]]></text>
+				<text><![CDATA[國名(英文)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="150" y="0" width="140" height="30" uuid="c179e961-dee3-404d-8cf0-915344e2bbf8"/>
+				<reportElement mode="Opaque" x="140" y="0" width="140" height="26" backcolor="#00FFCC" uuid="47043ed8-2c69-49e4-8bf0-2ebf8674094a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="標楷體" size="14"/>
 				</textElement>
-				<text><![CDATA[國名（中文)]]></text>
+				<text><![CDATA[國名(中文)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="290" y="0" width="120" height="30" uuid="5b68e6ae-4a16-4d2a-979c-d2f55ee598de"/>
+				<reportElement mode="Opaque" x="280" y="0" width="100" height="26" backcolor="#00FFCC" uuid="94356e26-4375-495f-b12d-b7b7477fcd74">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="標楷體" size="14"/>
 				</textElement>
 				<text><![CDATA[案例數]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="410" y="0" width="130" height="30" uuid="8f50b3de-47ac-4a2a-8da1-4bfd7d8eb82f"/>
+				<reportElement mode="Opaque" x="380" y="0" width="100" height="26" backcolor="#00FFCC" uuid="cd4cf2de-8d92-430d-930f-9e08cc6f27ef"/>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="標楷體" size="14"/>
 				</textElement>
@@ -70,11 +127,47 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="140" height="24" uuid="22c2368c-083e-42fd-9b36-9164fd614cee">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box padding="4">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{country_en}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="140" height="24" uuid="4c66c33c-ad16-4ef9-affd-340bbc4ee323">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box padding="4">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{country_ch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="24" isRemoveLineWhenBlank="true" uuid="b950d0b8-5a62-4384-8807-7184daf5c4ed">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box padding="4">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{cases}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="24" uuid="11f46407-c557-4d26-8c5f-0ef1e4284953"/>
+				<box padding="4">
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{deaths}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch"/>
 	</pageFooter>

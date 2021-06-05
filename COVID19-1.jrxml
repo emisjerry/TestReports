@@ -21,23 +21,45 @@
 				<imageExpression><![CDATA["Z:/test/data/COVID-19.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="100" y="16" width="390" height="30" uuid="7f4b9819-c147-4181-a760-40dd862a2ff6"/>
+				<reportElement x="170" y="10" width="314" height="30" uuid="c5d7c4ac-8cdd-4cd3-8e50-6a8ee9849bf0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="標楷體" size="20"/>
+				</textElement>
+				<text><![CDATA[戴口罩，勤洗手★遠離病毒]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="82" y="0" width="390" height="30" uuid="7f4b9819-c147-4181-a760-40dd862a2ff6"/>
 				<textElement>
 					<font fontName="標楷體" size="18"/>
 				</textElement>
 				<text><![CDATA[COVID-19各國家地區累積病例數與死亡數 統計表]]></text>
 			</staticText>
-			<textField pattern="yyyy-MM-dd">
-				<reportElement x="200" y="48" width="154" height="22" uuid="a41c7abf-4b5b-4ae0-ade2-c0b67f690416"/>
+			<textField pattern="日期：yyyy-MM-dd hh:mm:ss">
+				<reportElement x="-2" y="40" width="182" height="22" uuid="a41c7abf-4b5b-4ae0-ade2-c0b67f690416"/>
 				<textElement>
-					<font fontName="Arial" size="14"/>
+					<font fontName="細明體" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="347" y="40" width="100" height="30" uuid="65be1ceb-fcd2-4674-8ee5-7314567605cb"/>
+				<textElement textAlignment="Right">
+					<font fontName="細明體"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 頁"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="447" y="40" width="100" height="30" uuid="364a8537-6e65-45d3-8500-8eafa19171a1"/>
+				<textElement textAlignment="Left">
+					<font fontName="細明體"/>
+				</textElement>
+				<textFieldExpression><![CDATA["/共 " + $V{PAGE_NUMBER} + " 頁"]]></textFieldExpression>
+			</textField>
 		</band>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="26">

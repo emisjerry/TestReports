@@ -4,6 +4,12 @@
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="458"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="528"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="COVID19-Data"/>
+	<style name="Style1" mode="Opaque" backcolor="#F6FCB3">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{PAGE_COUNT}%2==0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#CCFFFF"/>
+		</conditionalStyle>
+	</style>
 	<queryString language="csv">
 		<![CDATA[]]>
 	</queryString>
@@ -38,7 +44,7 @@
 				</textElement>
 				<text><![CDATA[COVID-19各國家地區累積病例數與死亡數 統計表]]></text>
 			</staticText>
-			<textField pattern="日期：yyyy-MM-dd hh:mm:ss">
+			<textField pattern="日期：yyyy-MM-dd HH:mm:ss">
 				<reportElement x="-2" y="40" width="182" height="22" uuid="a41c7abf-4b5b-4ae0-ade2-c0b67f690416"/>
 				<textElement>
 					<font fontName="細明體" size="14"/>
@@ -62,9 +68,9 @@
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="26">
+		<band height="31">
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="140" height="26" backcolor="#00FFCC" uuid="14110dea-ae7c-4899-b214-f41dd5fbf41e">
+				<reportElement mode="Opaque" x="67" y="0" width="140" height="26" backcolor="#00FFCC" uuid="14110dea-ae7c-4899-b214-f41dd5fbf41e">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<box>
@@ -76,7 +82,7 @@
 				<text><![CDATA[國名(英文)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="140" y="0" width="140" height="26" backcolor="#00FFCC" uuid="47043ed8-2c69-49e4-8bf0-2ebf8674094a">
+				<reportElement mode="Opaque" x="207" y="0" width="140" height="26" backcolor="#00FFCC" uuid="47043ed8-2c69-49e4-8bf0-2ebf8674094a">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<box>
@@ -88,7 +94,7 @@
 				<text><![CDATA[國名(中文)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="280" y="0" width="100" height="26" backcolor="#00FFCC" uuid="94356e26-4375-495f-b12d-b7b7477fcd74">
+				<reportElement mode="Opaque" x="347" y="0" width="100" height="26" backcolor="#00FFCC" uuid="94356e26-4375-495f-b12d-b7b7477fcd74">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<box>
@@ -100,7 +106,7 @@
 				<text><![CDATA[案例數]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="380" y="0" width="100" height="26" backcolor="#00FFCC" uuid="cd4cf2de-8d92-430d-930f-9e08cc6f27ef"/>
+				<reportElement mode="Opaque" x="447" y="0" width="100" height="26" backcolor="#00FFCC" uuid="cd4cf2de-8d92-430d-930f-9e08cc6f27ef"/>
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
@@ -109,52 +115,90 @@
 				</textElement>
 				<text><![CDATA[死亡數]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="68" height="26" backcolor="#00FFCC" uuid="779f65ff-fd11-4c38-97cc-b62bfea96840">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="標楷體" size="14"/>
+				</textElement>
+				<text><![CDATA[序號]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="24" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
-				<reportElement x="0" y="0" width="140" height="24" uuid="22c2368c-083e-42fd-9b36-9164fd614cee">
+			<frame>
+				<reportElement style="Style1" x="0" y="0" width="547" height="24" uuid="0a4bbaba-308b-4b57-9600-bae83885a128">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<box padding="4">
-					<pen lineWidth="0.25"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{country_en}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="140" y="0" width="140" height="24" uuid="4c66c33c-ad16-4ef9-affd-340bbc4ee323">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<box padding="4">
-					<pen lineWidth="0.25"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{country_ch}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="280" y="0" width="100" height="24" isRemoveLineWhenBlank="true" uuid="b950d0b8-5a62-4384-8807-7184daf5c4ed">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<box padding="4">
-					<pen lineWidth="0.25"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{cases}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="380" y="0" width="100" height="24" uuid="11f46407-c557-4d26-8c5f-0ef1e4284953"/>
-				<box padding="4">
-					<pen lineWidth="0.25"/>
-				</box>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{deaths}]]></textFieldExpression>
-			</textField>
+				<textField>
+					<reportElement x="0" y="0" width="68" height="24" uuid="0b89a364-2f51-46ef-9147-fe6814cd0a55">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<box padding="4">
+						<pen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="67" y="0" width="140" height="24" uuid="22c2368c-083e-42fd-9b36-9164fd614cee">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box padding="4">
+						<pen lineWidth="0.25"/>
+					</box>
+					<textFieldExpression><![CDATA[$F{country_en}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="207" y="0" width="140" height="24" uuid="4c66c33c-ad16-4ef9-affd-340bbc4ee323">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box padding="4">
+						<pen lineWidth="0.25"/>
+					</box>
+					<textFieldExpression><![CDATA[$F{country_ch}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="347" y="0" width="100" height="24" isRemoveLineWhenBlank="true" uuid="b950d0b8-5a62-4384-8807-7184daf5c4ed">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box padding="4">
+						<pen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{cases}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="447" y="0" width="100" height="24" uuid="11f46407-c557-4d26-8c5f-0ef1e4284953"/>
+					<box padding="4">
+						<pen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{deaths}]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement x="144" y="10" width="266" height="30" uuid="8f249678-fa47-4c83-8c95-bde4e1a15fe3"/>
+				<textElement textAlignment="Right">
+					<font fontName="細明體"/>
+				</textElement>
+				<textFieldExpression><![CDATA["第 " + $V{PAGE_NUMBER} + " 頁 有 " + $V{PAGE_COUNT} + " 筆記錄"]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
